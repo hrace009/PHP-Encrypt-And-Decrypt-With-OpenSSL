@@ -3,7 +3,7 @@ $data = 'This Text Will Encrypt and Decrypt using OpenSSL!!'; // Define text wil
 $secretKey = 'somerandomkey'; // Define some random key.
 $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length('AES-256-CBC')); // Define your initialization vector.
 
-// Function to encryp
+// Function to encrypt
 function encrypt($data, $secretKey, $iv)
     {
         return trim(strtr(base64_encode(openssl_encrypt($data, 'AES-256-CBC', $secretKey, 0, $iv)),'+/=', '-_,'));
